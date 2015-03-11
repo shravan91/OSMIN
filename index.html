@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>OpenStreetMap India</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #title{position:absolute; top:0;}
+  #map {position:absolute; top:38px; bottom:0; width:100%; }
+
+</style>
+</head>
+<body>
+
+
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
+
+
+<div id='title'><h3>OpenStreetMap India</h3></div> 
+<div id='map'></div>
+<!--<div id='inputs'></div>
+<div id='errors'></div>
+<div id='directions'>
+  <div id='routes'></div>
+  <div id='instructions'></div>-->
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoic2hyYXZhbjE5OTEiLCJhIjoiMTdBSHFPbyJ9.TOW1Gw15YndOtIHl3_oiKw';
+var map = L.mapbox.map('map', '')
+    .setView([23, 78], 4).addControl(L.mapbox.geocoderControl('mapbox.places', {
+        autocomplete: true}))
+    /*.on('ready', function() { new L.Control.MiniMap(L.mapbox.tileLayer('shravan1991.cd791dbd'))
+            .addTo(map);	
+        });*/
+    var hash = L.hash(map);
+L.tileLayer('http://maps.metastudio.org/osm-india/{z}/{x}/{y}.png').addTo(map);
+    map.attributionControl.setPosition('bottomleft')
+
+// create the initial directions object, from which the layer
+// and inputs will pull data.
+/*var directions = L.mapbox.directions({
+    profile: 'mapbox.walking'
+});
+
+var directionsLayer = L.mapbox.directions.layer(directions)
+    .addTo(map);
+
+var directionsInputControl = L.mapbox.directions.inputControl('inputs', directions)
+    .addTo(map);
+
+var directionsErrorsControl = L.mapbox.directions.errorsControl('errors', directions)
+    .addTo(map);
+
+var directionsRoutesControl = L.mapbox.directions.routesControl('routes', directions)
+    .addTo(map);
+
+var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
+    .addTo(map);*/
+</script>
+
+<div>
+<p></p>
+</div>
+</body>
+</html>
