@@ -29,14 +29,14 @@
   <div id='instructions'></div>-->
 <script>
 L.mapbox.accessToken = 'pk.eyJ1Ijoic2hyYXZhbjE5OTEiLCJhIjoiMTdBSHFPbyJ9.TOW1Gw15YndOtIHl3_oiKw';
-var map = L.mapbox.map('map', '')
+var map = L.mapbox.map('map', 'shravan1991.53dc8852')
     .setView([23, 78], 4).addControl(L.mapbox.geocoderControl('mapbox.places', {
         autocomplete: true}))
     /*.on('ready', function() { new L.Control.MiniMap(L.mapbox.tileLayer('shravan1991.cd791dbd'))
             .addTo(map);	
         });*/
     var hash = L.hash(map);
-    L.tileLayer('shravan1991.53dc8852').addTo(map);
+    //L.tileLayer('shravan1991.53dc8852').addTo(map);
 //L.tileLayer('http://maps.metastudio.org/osm-india/{z}/{x}/{y}.png').addTo(map);
 //L.mapbox.tileLayer('shravan1991.d9447346').addTo(map);
     map.attributionControl.setPosition('bottomleft')
