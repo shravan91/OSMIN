@@ -36,9 +36,8 @@ var map = L.mapbox.map('map', '')
             .addTo(map);	
         });*/
     var hash = L.hash(map);
-    L.tileLayer('shravan1991.53dc8852').addTo(map);
-//L.tileLayer('http://maps.metastudio.org/osm-india/{z}/{x}/{y}.png').addTo(map);
-//L.mapbox.tileLayer('shravan1991.d9447346').addTo(map);
+L.tileLayer('http://maps.metastudio.org/osm-india/{z}/{x}/{y}.png').addTo(map);
+L.mapbox.tileLayer('shravan1991.d9447346').addTo(map);
     map.attributionControl.setPosition('bottomleft')
 
 // create the initial directions object, from which the layer
